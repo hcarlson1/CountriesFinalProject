@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CountriesFinalProject</string>
+
+    <string name="alt_spelling">Alt Spelling</string>
+    <string name="capital">Capital</string>
+    <string name="country_results">Country Results:</string>
+    <string name="flag">Flag</string>
+    <string name="population">Population</string>
+    <string name="region">Region</string>
+    <string name="search_another_country">Search Another Country</string>
+
+</resources>
