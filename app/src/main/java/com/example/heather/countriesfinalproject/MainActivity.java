@@ -1,11 +1,14 @@
 package com.example.heather.countriesfinalproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.view.View;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,5 +34,17 @@ public class MainActivity extends AppCompatActivity {
         cbTimeZone = (CheckBox) findViewById(R.id.checkBoxCTimeZone);
         cbFlag = (CheckBox) findViewById(R.id.checkBoxCFlag);
         buttonSearch = (Button) findViewById(R.id.buttonSearch);
+
+        buttonSearch.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent resultIntent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(resultIntent);
+            }
+        });
+
     }
+
+
 }
