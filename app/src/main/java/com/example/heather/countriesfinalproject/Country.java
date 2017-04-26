@@ -5,18 +5,18 @@ package com.example.heather.countriesfinalproject;
  */
 
 public class Country {
-    String name, capital, region, timezone, altSpelling;
+    String name, capital, region, timeZone, altSpelling;
     Long population;
 
     public Country() {
 
     }
 
-    public Country(String name, String capital, String region, String timezone, String altSpelling, Long population) {
+    public Country(String name, String capital, String region, String timeZone, String altSpelling, Long population) {
         this.name = name;
         this.capital = capital;
         this.region = region;
-        this.timezone = timezone;
+        this.timeZone = timeZone;
         this.altSpelling = altSpelling;
         this.population = population;
     }
@@ -46,11 +46,11 @@ public class Country {
     }
 
     public String getTimezone() {
-        return timezone;
+        return timeZone;
     }
 
     public void setTimezone(String timezone) {
-        this.timezone = timezone;
+        this.timeZone = timezone;
     }
 
     public String getAltSpelling() {
@@ -75,7 +75,7 @@ public class Country {
                 "name='" + name + '\'' +
                 ", capital='" + capital + '\'' +
                 ", region='" + region + '\'' +
-                ", timezone='" + timezone + '\'' +
+                ", timezone='" + timeZone + '\'' +
                 ", altSpelling='" + altSpelling + '\'' +
                 ", population=" + population +
                 '}';

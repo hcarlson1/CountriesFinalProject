@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton rbCanada, rbMexico, rbUS;
     CheckBox cbCapital, cbAltSpelling, cbRegion, cbPopulation, cbTimeZone, cbFlag;
     Button buttonSearch;
+    String countryToGet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,17 +35,21 @@ public class MainActivity extends AppCompatActivity {
         cbTimeZone = (CheckBox) findViewById(R.id.checkBoxCTimeZone);
         cbFlag = (CheckBox) findViewById(R.id.checkBoxCFlag);
         buttonSearch = (Button) findViewById(R.id.buttonSearch);
-
-        buttonSearch.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                Intent resultIntent = new Intent(MainActivity.this, SecondActivity.class);
-                startActivity(resultIntent);
-            }
-        });
-
     }
 
+    public void btnClick (View v) {
+        countryToGet = etCountrySearch.getText().toString();
+        new AsyncFetchTask().execute(this);
 
+        countryToGet = etCountrySearch.getText().toString();
+
+        Intent resultIntent = new Intent(MainActivity.this, SecondActivity.class);
+        resultIntent.putExtra("Country", countryToGet);
+        startActivity(resultIntent);
+
+    }
 }
+
+
+
+
