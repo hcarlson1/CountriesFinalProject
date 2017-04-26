@@ -27,11 +27,14 @@ public class CountryDataFetcher {
             JSONObject jsonCountry = jsonArr.getJSONObject(0);
             String capital = jsonCountry.getString("capital");
             String region = jsonCountry.getString("region");
-            String timeZone = jsonCountry.getString("timeZone");
-            String altSpelling = jsonCountry.getString("altSpelling");
+            //String timeZone = jsonCountry.getString("timeZone");
+            //JSONArray altSpelling = jsonCountry.getJSONArray("altSpellings");
+
             Long population = Long.parseLong( jsonCountry.getString("population") );
 
-            Country fetchedCountry = new Country(countryName, capital, region, timeZone, altSpelling, population);
+            //Country fetchedCountry = new Country(countryName, capital, population);
+            Country fetchedCountry = new Country(countryName, capital, region, population);
+            //Country fetchedCountry = new Country(countryName, capital, region, timeZone, altSpelling, population);
             return fetchedCountry;        // return result to activity
         }  catch (Exception e) {
             Log.v("CIS3334","fetchCountryData error " + e.getMessage());

@@ -11,6 +11,11 @@ public class Country {
     public Country() {
 
     }
+    public Country(String name, String capital, Long population) {
+        this.name = name;
+        this.capital = capital;
+        this.population = population;
+    }
 
     public Country(String name, String capital, String region, String timeZone, String altSpelling, Long population) {
         this.name = name;
@@ -18,6 +23,25 @@ public class Country {
         this.region = region;
         this.timeZone = timeZone;
         this.altSpelling = altSpelling;
+        this.population = population;
+    }
+
+    public Country(String name) {
+        this.name = name;
+    }
+
+    public Country(String name, String capital, String region, String timeZone, Long population) {
+        this.name = name;
+        this.capital = capital;
+        this.region = region;
+        this.timeZone = timeZone;
+        this.population = population;
+    }
+
+    public Country(String name, String capital, String region, Long population) {
+        this.name = name;
+        this.capital = capital;
+        this.region = region;
         this.population = population;
     }
 

@@ -6,11 +6,11 @@ import android.os.AsyncTask;
  * Created by hcarlson1 on 4/26/2017.
  */
 
-public class AsyncFetchTask extends AsyncTask<MainActivity, Void, Country> {
+public class AsyncFetchTask extends AsyncTask<ResultActivity, Void, Country> {
 
 
     MainActivity mainActivity;
-    SecondActivity secondActivity;
+    ResultActivity resultActivity;
 
     @Override
     protected void onPreExecute() {
@@ -19,21 +19,21 @@ public class AsyncFetchTask extends AsyncTask<MainActivity, Void, Country> {
     }
 
     @Override
-    protected Country doInBackground(MainActivity... params) {
+    protected Country doInBackground(ResultActivity... params) {
         /* If there's no country, there's nothing to look up. */
         if (params.length == 0) {
             return null;
         }
-        mainActivity = params[0];    // country name should be the only string given
+        resultActivity = params[0];    // country name should be the only string given
         CountryDataFetcher fetcher = new CountryDataFetcher();
-        Country fetchedCountry = fetcher.fetchCountryData(mainActivity.countryToGet);
+        Country fetchedCountry = fetcher.fetchCountryData(resultActivity.countryToGet);
         return fetchedCountry;
     }
 
     @Override
     protected void onPostExecute(Country fetchedCountry) {
         // returns Country when fetched by doInBackground
-        secondActivity.updateCountryData(fetchedCountry);
+        resultActivity.updateCountryData(fetchedCountry);
     }
 
 }

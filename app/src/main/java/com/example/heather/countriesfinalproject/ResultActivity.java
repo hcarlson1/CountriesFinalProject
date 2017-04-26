@@ -8,11 +8,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by Heather on 4/20/2017.
- */
-
-public class SecondActivity extends AppCompatActivity {
+public class ResultActivity extends AppCompatActivity {
 
     TextView tvName, tvCapital, tvAltSPelling, tvRegion, tvPopulation, tvTimeZone, tvFlag;
     Button buttonBack;
@@ -32,6 +28,13 @@ public class SecondActivity extends AppCompatActivity {
         tvTimeZone = (TextView) findViewById(R.id.textViewCTimeZone);
         tvFlag = (TextView) findViewById(R.id.textViewcFlag);
 
+        Bundle extras = getIntent().getExtras();
+        countryToGet = extras.getSerializable("Country").toString();
+        new AsyncFetchTask().execute(this);
+
+        Toast toast=Toast.makeText(getApplicationContext(), "Requested: " + countryToGet ,Toast.LENGTH_LONG );
+        toast.show();
+
         buttonBack = (Button) findViewById(R.id.buttonBack);
 
         buttonBack.setOnClickListener(new View.OnClickListener() {
@@ -50,8 +53,16 @@ public class SecondActivity extends AppCompatActivity {
 
     public void updateCountryData(Country countryData) {
         this.countryData = countryData;
+        tvName.setText(" " + countryData.getName());
         tvCapital.setText(countryData.getCapital());
-        Toast toast=Toast.makeText(getApplicationContext(), "Updating country data",Toast.LENGTH_LONG );
+        tvRegion.setText(countryData.getRegion());
+        //tvTimeZone.setText(countryData.getTimezone());
+        tvPopulation.setText(countryData.getPopulation().toString());
+
+
+        Toast toast=Toast.makeText(getApplicationContext(), "Updated country data",Toast.LENGTH_LONG );
         toast.show();
     }
-}
+ }
+
+

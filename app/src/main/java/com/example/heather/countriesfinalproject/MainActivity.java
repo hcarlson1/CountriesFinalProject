@@ -3,7 +3,6 @@ package com.example.heather.countriesfinalproject;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -39,13 +38,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnClick (View v) {
-        //countryToGet = etCountrySearch.getText().toString();
+        countryToGet = etCountrySearch.getText().toString();
         //new AsyncFetchTask().execute(this);
 
-        //countryToGet = etCountrySearch.getText().toString();
-    Log.d("HEATHRE","in BUTTON CLICK");
-        Intent resultIntent = new Intent(MainActivity.this, SecondActivity.class);
-        //resultIntent.putExtra("Country", countryToGet);
+
+
+        countryToGet = etCountrySearch.getText().toString();
+
+        Intent resultIntent = new Intent(MainActivity.this, ResultActivity.class);
+        resultIntent.putExtra("Country", countryToGet);
         startActivity(resultIntent);
 
     }
