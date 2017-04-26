@@ -28,20 +28,26 @@ public class CountryDataFetcher {
             JSONObject jsonCountry = jsonArr.getJSONObject(0);
             String capital = jsonCountry.getString("capital");
             String region = jsonCountry.getString("region");
-            //String timeZone = jsonCountry.getString("timeZone");
-            JSONArray altSpelling = jsonCountry.getJSONArray("altSpellings");
             Long population = Long.parseLong( jsonCountry.getString("population") );
-            ArrayList<String> listdata = new ArrayList<String>();
-            if (altSpelling != null) {
-                for (int i = 0; i < altSpelling.length(); i++) {
-                    listdata.add(altSpelling.getString(i));
+            JSONArray timeZone = jsonCountry.getJSONArray("timezones");
+            ArrayList<String> timeZoneData = new ArrayList<String>(); //Need to translate the JSON Array into a ArrayList for Country Constructor
+            if (timeZone != null) {
+                for (int i = 0; i < timeZone.length(); i++) {
+                    timeZoneData.add(timeZone.getString(i));
                 }
             }
 
-
+            JSONArray altSpelling = jsonCountry.getJSONArray("altSpellings");
+            ArrayList<String> altSpellingData = new ArrayList<String>(); //Need to translate the JSON Array into a ArrayList for Country Constructor
+            if (altSpelling != null) {
+                for (int i = 0; i < altSpelling.length(); i++) {
+                    altSpellingData.add(altSpelling.getString(i));
+                }
+            }
 
                 //Country fetchedCountry = new Country(countryName, capital, population);
-            Country fetchedCountry = new Country(countryName, capital, region, population, listdata);
+            //Country fetchedCountry = new Country(countryName, capital, region, population, altSpellingData);
+            Country fetchedCountry = new Country(countryName, capital, region, population, altSpellingData, timeZoneData);
             //Country fetchedCountry = new Country(countryName, capital, region, population);
             //Country fetchedCountry = new Country(countryName, capital, region, timeZone, altSpelling, population);
             return fetchedCountry;        // return result to activity

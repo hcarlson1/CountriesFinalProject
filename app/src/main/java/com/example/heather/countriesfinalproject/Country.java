@@ -7,9 +7,10 @@ import java.util.ArrayList;
  */
 
 public class Country {
-    String name, capital, region, timeZone;
+    String name, capital, region;
     Long population;
     ArrayList<String> altSpelling = new ArrayList<>();
+    ArrayList<String> timeZone = new ArrayList<>();
 
     public Country() {
 
@@ -25,12 +26,13 @@ public class Country {
         this.name = name;
     }
 
-    public Country(String name, String capital, String region, String timeZone, Long population) {
+    public Country(String name, String capital, String region, Long population, ArrayList<String> altSpelling, ArrayList<String> timeZone) {
         this.name = name;
         this.capital = capital;
         this.region = region;
-        this.timeZone = timeZone;
         this.population = population;
+        this.altSpelling = altSpelling;
+        this.timeZone = timeZone;
     }
 
     public Country(String name, String capital, String region, Long population) {
@@ -72,12 +74,12 @@ public class Country {
         this.region = region;
     }
 
-    public String getTimezone() {
+    public ArrayList<String> getTimeZone() {
         return timeZone;
     }
 
-    public void setTimezone(String timezone) {
-        this.timeZone = timezone;
+    public void setTimeZone(ArrayList<String> timeZone) {
+        this.timeZone = timeZone;
     }
 
     public ArrayList<String> getAltSpelling() {
