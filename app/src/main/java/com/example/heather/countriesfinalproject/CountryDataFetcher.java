@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
+import java.util.ArrayList;
 
 /**
  * Created by hcarlson1 on 4/26/2017.
@@ -28,12 +29,20 @@ public class CountryDataFetcher {
             String capital = jsonCountry.getString("capital");
             String region = jsonCountry.getString("region");
             //String timeZone = jsonCountry.getString("timeZone");
-            //JSONArray altSpelling = jsonCountry.getJSONArray("altSpellings");
-
+            JSONArray altSpelling = jsonCountry.getJSONArray("altSpellings");
             Long population = Long.parseLong( jsonCountry.getString("population") );
+            ArrayList<String> listdata = new ArrayList<String>();
+            if (altSpelling != null) {
+                for (int i = 0; i < altSpelling.length(); i++) {
+                    listdata.add(altSpelling.getString(i));
+                }
+            }
 
-            //Country fetchedCountry = new Country(countryName, capital, population);
-            Country fetchedCountry = new Country(countryName, capital, region, population);
+
+
+                //Country fetchedCountry = new Country(countryName, capital, population);
+            Country fetchedCountry = new Country(countryName, capital, region, population, listdata);
+            //Country fetchedCountry = new Country(countryName, capital, region, population);
             //Country fetchedCountry = new Country(countryName, capital, region, timeZone, altSpelling, population);
             return fetchedCountry;        // return result to activity
         }  catch (Exception e) {

@@ -58,6 +58,7 @@ public class ResultActivity extends AppCompatActivity {
         tvRegion.setText(countryData.getRegion());
         //tvTimeZone.setText(countryData.getTimezone());
         tvPopulation.setText(countryData.getPopulation().toString());
+        tvAltSPelling.setText(countryData.altSpelling.get(0) + " || " + countryData.altSpelling.get(1));
 
 
         Toast toast=Toast.makeText(getApplicationContext(), "Updated country data",Toast.LENGTH_LONG );

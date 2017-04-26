@@ -1,12 +1,15 @@
 package com.example.heather.countriesfinalproject;
 
+import java.util.ArrayList;
+
 /**
  * Created by hcarlson1 on 4/26/2017.
  */
 
 public class Country {
-    String name, capital, region, timeZone, altSpelling;
+    String name, capital, region, timeZone;
     Long population;
+    ArrayList<String> altSpelling = new ArrayList<>();
 
     public Country() {
 
@@ -17,14 +20,6 @@ public class Country {
         this.population = population;
     }
 
-    public Country(String name, String capital, String region, String timeZone, String altSpelling, Long population) {
-        this.name = name;
-        this.capital = capital;
-        this.region = region;
-        this.timeZone = timeZone;
-        this.altSpelling = altSpelling;
-        this.population = population;
-    }
 
     public Country(String name) {
         this.name = name;
@@ -43,6 +38,14 @@ public class Country {
         this.capital = capital;
         this.region = region;
         this.population = population;
+    }
+
+    public Country(String name, String capital, String region, Long population, ArrayList<String> altSpelling) {
+        this.name = name;
+        this.capital = capital;
+        this.region = region;
+        this.population = population;
+        this.altSpelling = altSpelling;
     }
 
     public String getName() {
@@ -77,11 +80,11 @@ public class Country {
         this.timeZone = timezone;
     }
 
-    public String getAltSpelling() {
+    public ArrayList<String> getAltSpelling() {
         return altSpelling;
     }
 
-    public void setAltSpelling(String altSpelling) {
+    public void setAltSpelling(ArrayList<String> altSpelling) {
         this.altSpelling = altSpelling;
     }
 
@@ -100,7 +103,7 @@ public class Country {
                 ", capital='" + capital + '\'' +
                 ", region='" + region + '\'' +
                 ", timezone='" + timeZone + '\'' +
-                ", altSpelling='" + altSpelling + '\'' +
+                //", altSpelling='" + altSpelling.get(0) + '\'' +
                 ", population=" + population +
                 '}';
     }
