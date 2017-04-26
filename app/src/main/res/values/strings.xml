@@ -8,5 +8,6 @@
     <string name="population">Population</string>
     <string name="region">Region</string>
     <string name="search_another_country">Search Another Country</string>
+    <string name="title_activity_result">resultActivity</string>
 
 </resources>

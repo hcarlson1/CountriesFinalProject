@@ -17,6 +17,7 @@ public class SecondActivity extends AppCompatActivity {
     TextView tvName, tvCapital, tvAltSPelling, tvRegion, tvPopulation, tvTimeZone, tvFlag;
     Button buttonBack;
     Country countryData;
+    String countryToGet;
 
 
     protected void onCreate(Bundle savedInstanceState) {
