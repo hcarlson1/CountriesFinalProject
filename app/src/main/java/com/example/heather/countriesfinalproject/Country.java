@@ -7,7 +7,7 @@ import java.util.ArrayList;
  */
 
 public class Country {
-    String name, capital, region;
+    String name, capital, region, url;
     Long population;
     ArrayList<String> altSpelling = new ArrayList<>();
     ArrayList<String> timeZone = new ArrayList<>();
@@ -48,6 +48,17 @@ public class Country {
         this.region = region;
         this.population = population;
         this.altSpelling = altSpelling;
+    }
+
+
+    public Country(String name, String capital, String region, String url, Long population, ArrayList<String> altSpelling, ArrayList<String> timeZone) {
+        this.name = name;
+        this.capital = capital;
+        this.region = region;
+        this.url = url;
+        this.population = population;
+        this.altSpelling = altSpelling;
+        this.timeZone = timeZone;
     }
 
     public String getName() {
@@ -96,6 +107,14 @@ public class Country {
 
     public void setPopulation(Long population) {
         this.population = population;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @Override

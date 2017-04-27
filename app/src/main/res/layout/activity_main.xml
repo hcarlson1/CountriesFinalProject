@@ -50,7 +50,7 @@
         android:textColor="@color/colorPrimaryDark" />
 
     <RadioGroup
-        android:id="@+id/radio_group"
+        android:id="@+id/radio_group_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/view_below"

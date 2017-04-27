@@ -29,6 +29,7 @@ public class CountryDataFetcher {
             String capital = jsonCountry.getString("capital");
             String region = jsonCountry.getString("region");
             Long population = Long.parseLong( jsonCountry.getString("population") );
+            String flag = jsonCountry.getString("flag");
             JSONArray timeZone = jsonCountry.getJSONArray("timezones");
             ArrayList<String> timeZoneData = new ArrayList<String>(); //Need to translate the JSON Array into a ArrayList for Country Constructor
             if (timeZone != null) {
@@ -45,11 +46,8 @@ public class CountryDataFetcher {
                 }
             }
 
-                //Country fetchedCountry = new Country(countryName, capital, population);
-            //Country fetchedCountry = new Country(countryName, capital, region, population, altSpellingData);
-            Country fetchedCountry = new Country(countryName, capital, region, population, altSpellingData, timeZoneData);
-            //Country fetchedCountry = new Country(countryName, capital, region, population);
-            //Country fetchedCountry = new Country(countryName, capital, region, timeZone, altSpelling, population);
+            Country fetchedCountry = new Country(countryName, capital, region, flag, population, altSpellingData, timeZoneData);
+
             return fetchedCountry;        // return result to activity
         }  catch (Exception e) {
             Log.v("CIS3334","fetchCountryData error " + e.getMessage());

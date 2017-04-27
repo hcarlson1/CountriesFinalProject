@@ -9,7 +9,6 @@ import android.os.AsyncTask;
 public class AsyncFetchTask extends AsyncTask<ResultActivity, Void, Country> {
 
 
-    MainActivity mainActivity;
     ResultActivity resultActivity;
 
     @Override
