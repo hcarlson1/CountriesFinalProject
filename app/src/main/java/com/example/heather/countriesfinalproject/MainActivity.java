@@ -9,9 +9,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.view.View;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
+    private static final int REQUEST_CODE = 10;
 
     EditText etCountrySearch;
     RadioButton rbCanada, rbMexico, rbUS;
@@ -45,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         cbTimeZone = (CheckBox) findViewById(R.id.checkBoxCTimeZone);
         cbFlag = (CheckBox) findViewById(R.id.checkBoxCFlag);
         buttonSearch = (Button) findViewById(R.id.buttonSearch);
+
 
         etCountrySearch.setText("");
 
@@ -94,11 +97,52 @@ public class MainActivity extends AppCompatActivity {
         resultIntent.putExtra("Time Zone", timeZone);
         resultIntent.putExtra("Flag", flag);
 
-        startActivity(resultIntent);
+        startActivityForResult(resultIntent, REQUEST_CODE);
 
 
     }
-}
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode == RESULT_OK) {
+
+            Toast toast=Toast.makeText(getApplicationContext(), "Cleared Previous Search",Toast.LENGTH_LONG );
+            toast.show();
+
+            etCountrySearch.setText("");
+            radioGroup.clearCheck();
+
+            if(cbCapital.isChecked()){
+                cbCapital.toggle();
+                capital = false;
+            }
+
+            if(cbAltSpelling.isChecked()){
+                cbAltSpelling.toggle();
+                altSpelling = false;
+            }
+            if(cbRegion.isChecked()){
+                cbRegion.toggle();
+                region = false;
+            }
+
+            if(cbPopulation.isChecked()){
+                cbPopulation.toggle();
+                population = false;
+            }
+            if(cbTimeZone.isChecked()){
+                cbTimeZone.toggle();
+                timeZone = false;
+            }
+
+            if(cbFlag.isChecked()){
+                cbFlag.toggle();
+                flag = false;
+            }
+
+            }
+        }
+    }
+
 
 
 

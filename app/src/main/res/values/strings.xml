@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CountriesFinalProject</string>
 
-    <string name="alt_spelling">Alt Spelling</string>
+
     <string name="capital">Capital</string>
     <string name="country_results">Country Results:</string>
     <string name="flag">Flag</string>
@@ -9,5 +9,15 @@
     <string name="region">Region</string>
     <string name="search_another_country">Search Another Country</string>
     <string name="title_activity_result">resultActivity</string>
+    <string name="alt_spelling">Alt Spelling</string>
+    <string name="time_zone">Time Zone</string>
+    <string name="canada">Canada</string>
+    <string name="check_all_that_you_want_to_know">Check all that you want to know:</string>
+    <string name="country_to_search">Country to Search</string>
+    <string name="mexico">Mexico</string>
+    <string name="quick_country_info">Quick Country Info</string>
+    <string name="search">Search</string>
+    <string name="top_searches">Top Searches</string>
+    <string name="united_states">United States</string>
 
 </resources>

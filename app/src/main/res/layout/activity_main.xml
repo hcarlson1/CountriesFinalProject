@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="monospace"
-        android:text="Quick Country Info"
+        android:text="@string/quick_country_info"
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@android:color/background_dark"
@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Country to Search"
+        android:hint="@string/country_to_search"
         android:inputType="text"
         android:textAlignment="center" />
 
@@ -45,7 +45,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Top Searches"
+        android:text="@string/top_searches"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark" />
 
@@ -53,7 +53,6 @@
         android:id="@+id/radio_group_top"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/view_below"
         android:orientation="horizontal">
 
         <RadioButton
@@ -61,21 +60,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Canada" />
+            android:text="@string/canada" />
 
         <RadioButton
             android:id="@+id/radioButtonMexico"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Mexico" />
+            android:text="@string/mexico" />
 
         <RadioButton
             android:id="@+id/radioButtonUS"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="United States" />
+            android:text="@string/united_states" />
 
     </RadioGroup>
 
@@ -86,7 +85,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Check all that you want to know:"
+        android:text="@string/check_all_that_you_want_to_know"
         android:textColor="@color/colorPrimary"
         android:textSize="18sp" />
 
@@ -104,14 +103,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Capital" />
+            android:text="@string/capital" />
 
         <CheckBox
             android:id="@+id/checkBoxCAltSpelling"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Alt Spelling" />
+            android:text="@string/alt_spelling" />
 
     </LinearLayout>
 
@@ -125,14 +124,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Region" />
+            android:text="@string/region" />
 
         <CheckBox
             android:id="@+id/checkBoxCPopulation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Population" />
+            android:text="@string/population" />
     </LinearLayout>
 
     <LinearLayout
@@ -144,14 +143,14 @@
             android:id="@+id/checkBoxCTimeZone"
             android:layout_width="193dp"
             android:layout_height="wrap_content"
-            android:text="Time Zone" />
+            android:text="@string/time_zone" />
 
         <CheckBox
             android:id="@+id/checkBoxCFlag"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1.26"
-            android:text="Flag" />
+            android:text="@string/flag" />
     </LinearLayout>
 
     <Space
@@ -165,7 +164,7 @@
         android:background="@android:color/holo_blue_dark"
         android:fontFamily="monospace"
         android:onClick="btnClick"
-        android:text="Search"
+        android:text="@string/search"
         android:textColor="@android:color/black"
         android:textSize="18sp" />
 
