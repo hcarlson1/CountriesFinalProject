@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,22 +25,23 @@ public class ResultActivity extends AppCompatActivity {
 
     Button buttonBack;
     Country countryData;
-    String countryToGet, srcUrl;
-    ImageView ivFlag;
+    String countryToGet, srcUrl, correctString;
     boolean capital, altSpelling, region, population, timeZone, flag;
+    WebView webViewFlag;
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+        webViewFlag = (WebView) findViewById(R.id.webViewFlag);
         tvName = (TextView) findViewById(R.id.textViewCName);
         tvCapital = (TextView) findViewById(R.id.textViewCCapital);
         tvAltSPelling = (TextView) findViewById(R.id.textViewCAltSpelling);
         tvRegion = (TextView) findViewById(R.id.textViewCRegion);
         tvPopulation = (TextView) findViewById(R.id.textViewCPopulation);
         tvTimeZone = (TextView) findViewById(R.id.textViewCTimeZone);
-        ivFlag = (ImageView) findViewById(R.id.imageViewFlag);
+
 
         Bundle extras = getIntent().getExtras();
         capital = extras.getBoolean("Capital");
@@ -50,6 +52,7 @@ public class ResultActivity extends AppCompatActivity {
         flag = extras.getBoolean("Flag");
 
         countryToGet = extras.getSerializable("Country").toString();
+        correctString = normalizeCountry(countryToGet);
         new AsyncFetchTask().execute(this);
 
         Toast toast=Toast.makeText(getApplicationContext(), "Requested: " + countryToGet ,Toast.LENGTH_LONG );
@@ -74,7 +77,16 @@ public class ResultActivity extends AppCompatActivity {
     public void updateCountryData(Country countryData) {
         this.countryData = countryData;
 
-        tvName.setText(" " + countryData.getName());
+        tvName.setText(" " + countryToGet);
+
+        if (flag) {
+            srcUrl = countryData.getUrl();
+            webViewFlag.loadUrl(srcUrl);
+            webViewFlag.setInitialScale(1);
+            webViewFlag.getSettings().setLoadWithOverviewMode(true);
+            webViewFlag.getSettings().setUseWideViewPort(true);
+
+        }
 
         if (capital) { tvCapital.setText(countryData.getCapital()); }
 
@@ -96,13 +108,19 @@ public class ResultActivity extends AppCompatActivity {
                 tvAltSPelling.setText(countryData.altSpelling.get(0)); }
         }
 
-        if (flag) {
-            srcUrl = countryData.getUrl();
-            //tvAltSPelling.setText(countryData.getUrl());
-        }
+
 
         Toast toast=Toast.makeText(getApplicationContext(), "Updated country data",Toast.LENGTH_LONG );
         toast.show();
+    }
+
+    public String normalizeCountry(String country){
+        String string = country.trim();
+
+        if (country.contains(" ")) {
+            string = string.replace(" ","?");
+        }
+        return string;
     }
 
 

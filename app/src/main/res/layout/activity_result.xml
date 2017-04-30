@@ -6,6 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="46dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -21,7 +25,7 @@
 
         <TextView
             android:id="@+id/textViewCName"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="monospace"
@@ -32,7 +36,7 @@
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="22dp" />
+        android:layout_height="43dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -67,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Not Selected"
+            android:text="@string/not_selected"
             android:textColor="@color/colorPrimary" />
 
         <TextView
@@ -75,7 +79,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Not Selected"
+            android:text="@string/not_selected"
             android:textColor="@color/colorPrimary" />
     </LinearLayout>
 
@@ -115,7 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Not Selected"
+            android:text="@string/not_selected"
             android:textColor="@color/colorPrimary" />
 
         <TextView
@@ -123,7 +127,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Not Selected"
+            android:text="@string/not_selected"
             android:textColor="@color/colorPrimary" />
     </LinearLayout>
 
@@ -141,7 +145,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="monospace"
-            android:text="Time Zone"
+            android:text="@string/time_zone"
             android:textColor="@android:color/background_dark" />
 
         <TextView
@@ -163,15 +167,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Not Selected"
+            android:text="@string/not_selected"
             android:textColor="@color/colorPrimary" />
 
-        <ImageView
-            android:id="@+id/imageViewFlag"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@android:drawable/btn_star" />
+        <WebView
+            android:id="@+id/webViewFlag"
+            android:layout_width="194dp"
+            android:layout_height="121dp" />
 
     </LinearLayout>
 

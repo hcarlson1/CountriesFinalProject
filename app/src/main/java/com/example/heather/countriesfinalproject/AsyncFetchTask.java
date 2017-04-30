@@ -25,7 +25,7 @@ public class AsyncFetchTask extends AsyncTask<ResultActivity, Void, Country> {
         }
         resultActivity = params[0];    // country name should be the only string given
         CountryDataFetcher fetcher = new CountryDataFetcher();
-        Country fetchedCountry = fetcher.fetchCountryData(resultActivity.countryToGet);
+        Country fetchedCountry = fetcher.fetchCountryData(resultActivity.correctString);
         return fetchedCountry;
     }
 

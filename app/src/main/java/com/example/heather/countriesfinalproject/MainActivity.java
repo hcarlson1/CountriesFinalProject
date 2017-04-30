@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 10;
 
     EditText etCountrySearch;
-    RadioButton rbCanada, rbMexico, rbUS;
+    RadioButton rbCanada, rbMexico, rbChristmas;
     CheckBox cbCapital, cbAltSpelling, cbRegion, cbPopulation, cbTimeZone, cbFlag;
     Button buttonSearch;
     String countryToGet;
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
         rbCanada = (RadioButton) findViewById(R.id.radioButtonCanada);
         rbMexico = (RadioButton) findViewById(R.id.radioButtonMexico);
-        rbUS = (RadioButton) findViewById(R.id.radioButtonUS);
+        rbChristmas = (RadioButton) findViewById(R.id.radioButtonChristmas);
         cbCapital = (CheckBox) findViewById(R.id.checkBoxCCapital);
         cbAltSpelling = (CheckBox) findViewById(R.id.checkBoxCAltSpelling);
         cbRegion = (CheckBox) findViewById(R.id.checkBoxCRegion);
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup group, int checkedId){
                 if (rbCanada.isChecked()) { countryToGet = "Canada"; etCountrySearch.setText("Canada");}
                 else if (rbMexico.isChecked()) { countryToGet = "Mexico"; etCountrySearch.setText("Mexico");}
-                else if (rbUS.isChecked()) { countryToGet = "United States";etCountrySearch.setText("United States");}
+                else if (rbChristmas.isChecked()) { countryToGet = "Christmas Island";etCountrySearch.setText("Christmas Island");}
         }
     });
 

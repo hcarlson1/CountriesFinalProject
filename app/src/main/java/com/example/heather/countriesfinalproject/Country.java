@@ -124,7 +124,7 @@ public class Country {
                 ", capital='" + capital + '\'' +
                 ", region='" + region + '\'' +
                 ", timezone='" + timeZone + '\'' +
-                //", altSpelling='" + altSpelling.get(0) + '\'' +
+                ", altSpelling='" + altSpelling.get(0) + '\'' +
                 ", population=" + population +
                 '}';
     }

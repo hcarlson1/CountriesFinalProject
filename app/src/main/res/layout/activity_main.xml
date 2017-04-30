@@ -70,11 +70,11 @@
             android:text="@string/mexico" />
 
         <RadioButton
-            android:id="@+id/radioButtonUS"
+            android:id="@+id/radioButtonChristmas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/united_states" />
+            android:text="@string/christmas_island" />
 
     </RadioGroup>
 
@@ -141,15 +141,16 @@
 
         <CheckBox
             android:id="@+id/checkBoxCTimeZone"
-            android:layout_width="193dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/time_zone" />
 
         <CheckBox
             android:id="@+id/checkBoxCFlag"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1.26"
+            android:layout_weight="1"
             android:text="@string/flag" />
     </LinearLayout>
 
