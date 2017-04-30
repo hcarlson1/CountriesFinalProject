@@ -19,6 +19,9 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ *
+ */
 public class ResultActivity extends AppCompatActivity {
 
     TextView tvName, tvCapital, tvAltSPelling, tvRegion, tvPopulation, tvTimeZone;
@@ -29,7 +32,10 @@ public class ResultActivity extends AppCompatActivity {
     boolean capital, altSpelling, region, population, timeZone, flag;
     WebView webViewFlag;
 
-
+    /**
+     *
+     * @param savedInstanceState
+     */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
@@ -68,12 +74,20 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
     }
+
+    /**
+     *
+     */
     public void finish() {
         Intent intent = new Intent();
         setResult(RESULT_OK, intent);
         super.finish();
     }
 
+    /**
+     *
+     * @param countryData
+     */
     public void updateCountryData(Country countryData) {
         this.countryData = countryData;
 
@@ -114,6 +128,11 @@ public class ResultActivity extends AppCompatActivity {
         toast.show();
     }
 
+    /**
+     *
+     * @param country
+     * @return
+     */
     public String normalizeCountry(String country){
         String string = country.trim();
 

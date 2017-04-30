@@ -12,20 +12,42 @@ public class Country {
     ArrayList<String> altSpelling = new ArrayList<>();
     ArrayList<String> timeZone = new ArrayList<>();
 
+    /**
+     *
+     */
     public Country() {
 
     }
+
+    /**
+     *
+     * @param name
+     * @param capital
+     * @param population
+     */
     public Country(String name, String capital, Long population) {
         this.name = name;
         this.capital = capital;
         this.population = population;
     }
 
-
+    /**
+     *
+     * @param name
+     */
     public Country(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @param name
+     * @param capital
+     * @param region
+     * @param population
+     * @param altSpelling
+     * @param timeZone
+     */
     public Country(String name, String capital, String region, Long population, ArrayList<String> altSpelling, ArrayList<String> timeZone) {
         this.name = name;
         this.capital = capital;
@@ -35,6 +57,13 @@ public class Country {
         this.timeZone = timeZone;
     }
 
+    /**
+     *
+     * @param name
+     * @param capital
+     * @param region
+     * @param population
+     */
     public Country(String name, String capital, String region, Long population) {
         this.name = name;
         this.capital = capital;
@@ -42,6 +71,14 @@ public class Country {
         this.population = population;
     }
 
+    /**
+     *
+     * @param name
+     * @param capital
+     * @param region
+     * @param population
+     * @param altSpelling
+     */
     public Country(String name, String capital, String region, Long population, ArrayList<String> altSpelling) {
         this.name = name;
         this.capital = capital;
@@ -50,7 +87,16 @@ public class Country {
         this.altSpelling = altSpelling;
     }
 
-
+    /**
+     *
+     * @param name
+     * @param capital
+     * @param region
+     * @param url
+     * @param population
+     * @param altSpelling
+     * @param timeZone
+     */
     public Country(String name, String capital, String region, String url, Long population, ArrayList<String> altSpelling, ArrayList<String> timeZone) {
         this.name = name;
         this.capital = capital;
@@ -61,22 +107,42 @@ public class Country {
         this.timeZone = timeZone;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCapital() {
         return capital;
     }
 
+    /**
+     *
+     * @param capital
+     */
     public void setCapital(String capital) {
         this.capital = capital;
     }
 
+    /**
+     * 
+     * @return
+     */
     public String getRegion() {
         return region;
     }

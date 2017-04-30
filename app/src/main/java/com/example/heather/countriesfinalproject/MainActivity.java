@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+/**
+ *
+ */
 
 public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 10;
@@ -28,7 +31,10 @@ public class MainActivity extends AppCompatActivity {
     boolean timeZone = false;
     boolean flag = false;
 
-
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     *
+     * @param v
+     */
     public void btnClick (View v) {
         if (radioGroup.isActivated() == false) {
             countryToGet = etCountrySearch.getText().toString(); }
@@ -101,6 +111,13 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+    /**
+     *
+     * @param requestCode
+     * @param resultCode
+     * @param data
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK) {

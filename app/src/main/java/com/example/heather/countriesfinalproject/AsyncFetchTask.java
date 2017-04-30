@@ -7,16 +7,26 @@ import android.os.AsyncTask;
  */
 
 public class AsyncFetchTask extends AsyncTask<ResultActivity, Void, Country> {
-
+    /**
+     *
+     */
 
     ResultActivity resultActivity;
 
+    /**
+     *
+     */
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
         // do anything needed before the fetch begins
     }
 
+    /**
+     *
+     * @param params
+     * @return
+     */
     @Override
     protected Country doInBackground(ResultActivity... params) {
         /* If there's no country, there's nothing to look up. */
@@ -29,6 +39,10 @@ public class AsyncFetchTask extends AsyncTask<ResultActivity, Void, Country> {
         return fetchedCountry;
     }
 
+    /**
+     *
+     * @param fetchedCountry
+     */
     @Override
     protected void onPostExecute(Country fetchedCountry) {
         // returns Country when fetched by doInBackground
