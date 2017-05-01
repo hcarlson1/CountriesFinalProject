@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
      * in the activity_main.xml file. This also houses a listener for the radio group that
      * when a radio button is selected the name in the search edit text will be changed accordingly.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState - standard onCreate() parameter
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
      * variables to let the next activity know what info to display to the user. These are sent
      * via bundle in the intent to go to the ResultActivity.
      *
-     * @param v
+     * @param v - standard buttonClick() parameter
      */
     public void btnClick (View v) {
         if (radioGroup.isActivated() == false) {
