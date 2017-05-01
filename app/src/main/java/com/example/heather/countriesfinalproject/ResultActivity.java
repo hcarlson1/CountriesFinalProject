@@ -20,7 +20,18 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
+ * ResultActivity class sets up the widgets from the activity_result.xml to the variables created in this class in the onCreate() method.
+ * Also in the onCreate() method the bundle is being unpacked from the intent that tells the UI what info to display and the asynch task
+ * is called. Before the async call the country to be searched is 'normalized' so that it will successfully work with the API call.
+ * There is also a button listener that calls the finish method. The finish() method is what goes back to MainActivity class and calls
+ * the onActivityResult() method there. Last thing the onCreate() method does is create a toast message. updateCountryData() method grabs
+ * the information from the API call and displays the information the user defined in MainActivity and lastly creates a toast message.
+ * normalizeCountry() gets rid of any whitespace before and after the search term then if there is any white space between the words
+ * then replace it with a '?' to work with the API call.
  *
+ * @author Heather Carlson
+ * @version 1.0
+ * @since 4/29/2017
  */
 public class ResultActivity extends AppCompatActivity {
 
