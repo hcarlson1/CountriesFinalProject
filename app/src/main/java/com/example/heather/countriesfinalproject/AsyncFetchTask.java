@@ -7,9 +7,6 @@ import android.os.AsyncTask;
  */
 
 public class AsyncFetchTask extends AsyncTask<ResultActivity, Void, Country> {
-    /**
-     *
-     */
 
     ResultActivity resultActivity;
 

@@ -140,49 +140,80 @@ public class Country {
     }
 
     /**
-     * 
+     *
      * @return
      */
     public String getRegion() {
         return region;
     }
-
+    /**
+     *
+     * @param region
+     */
     public void setRegion(String region) {
         this.region = region;
     }
-
+    /**
+     *
+     * @return
+     */
     public ArrayList<String> getTimeZone() {
         return timeZone;
     }
-
+    /**
+     *
+     * @param timeZone
+     */
     public void setTimeZone(ArrayList<String> timeZone) {
         this.timeZone = timeZone;
     }
-
+    /**
+     *
+     * @return
+     */
     public ArrayList<String> getAltSpelling() {
         return altSpelling;
     }
-
+    /**
+     *
+     * @param altSpelling
+     */
     public void setAltSpelling(ArrayList<String> altSpelling) {
         this.altSpelling = altSpelling;
     }
-
+    /**
+     *
+     * @return
+     */
     public Long getPopulation() {
         return population;
     }
-
+    /**
+     *
+     * @param population
+     */
     public void setPopulation(Long population) {
         this.population = population;
     }
-
+    /**
+     *
+     * @return
+     */
     public String getUrl() {
         return url;
     }
-
+    /**
+     *
+     * @param url
+     */
     public void setUrl(String url) {
         this.url = url;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Country{" +

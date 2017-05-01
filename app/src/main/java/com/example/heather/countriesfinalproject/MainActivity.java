@@ -12,9 +12,15 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 /**
+ * MainActivity class sets up the widgets from the activity_main.xml to the variables created in this class in the onCreate() method.
+ * Also in the onCreate() method there is a listener for the radio button group that will change the search field to the name of the
+ * country that is selected. In the btnClick() method the information that the user wants to know is recorded and sent to the second
+ * activity in the intent call. onActivityResult() method goal is to only reset the search parameters.
  *
+ * @author Heather Carlson
+ * @version 1.0
+ * @since 4/29/2017
  */
-
 public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE = 10;
 
@@ -32,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
     boolean flag = false;
 
     /**
+     * onCreate() method links the variables created in this class to the widget ID
+     * in the activity_main.xml file. This also houses a listener for the radio group that
+     * when a radio button is selected the name in the search edit text will be changed accordingly.
      *
      * @param savedInstanceState
      */
@@ -42,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         etCountrySearch = (EditText) findViewById(R.id.editTextCountrySearch);
-
         rbCanada = (RadioButton) findViewById(R.id.radioButtonCanada);
         rbMexico = (RadioButton) findViewById(R.id.radioButtonMexico);
         rbChristmas = (RadioButton) findViewById(R.id.radioButtonChristmas);
@@ -53,24 +61,23 @@ public class MainActivity extends AppCompatActivity {
         cbTimeZone = (CheckBox) findViewById(R.id.checkBoxCTimeZone);
         cbFlag = (CheckBox) findViewById(R.id.checkBoxCFlag);
         buttonSearch = (Button) findViewById(R.id.buttonSearch);
-
-
-        etCountrySearch.setText("");
-
-
         radioGroup = (RadioGroup) findViewById(R.id.radio_group_top);
+
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId){
                 if (rbCanada.isChecked()) { countryToGet = "Canada"; etCountrySearch.setText("Canada");}
                 else if (rbMexico.isChecked()) { countryToGet = "Mexico"; etCountrySearch.setText("Mexico");}
                 else if (rbChristmas.isChecked()) { countryToGet = "Christmas Island";etCountrySearch.setText("Christmas Island");}
-        }
-    });
+            }
+        });
 
     }
 
     /**
+     * btnClick() method listens for the button buttonSearch to be clicked. It sets the boolean
+     * variables to let the next activity know what info to display to the user. These are sent
+     * via bundle in the intent to go to the ResultActivity.
      *
      * @param v
      */
@@ -113,6 +120,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * onActivityResult() method is called after the intent in ResultActivity is called to start
+     * this activity again. It requires the requestCode, resultCode, and the intent. The requestCode is already set in this class
+     * so the resultCode and the intent is really the only params being passed. This methods goal is to make a toast message
+     * letting the user know that the previous search has been cleared and then it does clear all of the previous search criteria.
      *
      * @param requestCode
      * @param resultCode

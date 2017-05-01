@@ -17,6 +17,11 @@ import java.util.ArrayList;
  */
 
 public class CountryDataFetcher {
+    /**
+     *
+     * @param countryName
+     * @return
+     */
     public Country fetchCountryData(String countryName) {
         try {
             String jsonStr;
@@ -56,6 +61,12 @@ public class CountryDataFetcher {
     }
 
     // convert InputStream to String
+
+    /**
+     *
+     * @param is
+     * @return
+     */
     private static String getStringFromInputStream(InputStream is) {
         BufferedReader br = null;
         StringBuilder sb = new StringBuilder();
