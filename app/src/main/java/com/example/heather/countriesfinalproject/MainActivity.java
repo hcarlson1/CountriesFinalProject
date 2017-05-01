@@ -125,9 +125,9 @@ public class MainActivity extends AppCompatActivity {
      * so the resultCode and the intent is really the only params being passed. This methods goal is to make a toast message
      * letting the user know that the previous search has been cleared and then it does clear all of the previous search criteria.
      *
-     * @param requestCode
-     * @param resultCode
-     * @param data
+     * @param requestCode - suppose to show what type of request, however there will only ever be one type for this application this is rendered useless
+     * @param resultCode - this is sued to make sure that the intent was successful
+     * @param data - this is the data for the intent
      */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

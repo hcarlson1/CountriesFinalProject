@@ -1,23 +1,15 @@
 package com.example.heather.countriesfinalproject;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
+
 
 /**
  * ResultActivity class sets up the widgets from the activity_result.xml to the variables created in this class in the onCreate() method.
@@ -44,8 +36,17 @@ public class ResultActivity extends AppCompatActivity {
     WebView webViewFlag;
 
     /**
+     * onCreate() method links the variables created in this class to the widget ID
+     * in the activity_result.xml file. The Bundle of extras from the intent that called
+     * this activity are unpacked and assigned to the local boolean variables so the UI
+     * displays the correct information the user requested. Then there is a method call
+     * to normalizeCountry() so the country requested will be successful with the API
+     * call. With the search term normalized, there is the creation of an AsyncFetchTask()
+     * object and the method execute() is called. Then there is the creation of a toast
+     * message and a listener for the button which calls the finish() method that will
+     * go back to the MainActivity.
      *
-     * @param savedInstanceState
+     * @param savedInstanceState - standard onCreate() parameter
      */
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,7 +88,9 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     * This is called in the button listener in the onCreate() method. This creates an
+     * intent and sets the result code along with the intent data so the onActivityResult()
+     * method in the MainActivity class will run successfully.
      */
     public void finish() {
         Intent intent = new Intent();
@@ -96,8 +99,17 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     /**
+     * Takes in the data from the Async call to the API and displays it in the UI in
+     * activity_result depending on the users selection of info. The only information
+     * that will always be displayed is the searched country. Otherwise every other
+     * possible piece of information that can be displayed is first checked if the user
+     * selected it to be displayed in MainActivity. Those settings were sent over in the
+     * intent and unpacked in the onCreate() and were set to local variables which are being
+     * used in this method. Some of the information is returned as an array from the API call
+     * and so there are checks to see if more information from the arrays can be displayed.
+     * Lastly a toast message is created to tell the user that information has been updated.
      *
-     * @param countryData
+     * @param countryData - The data from the Async API call to get the info about the searched country
      */
     public void updateCountryData(Country countryData) {
         this.countryData = countryData;
@@ -140,14 +152,19 @@ public class ResultActivity extends AppCompatActivity {
     }
 
     /**
+     * Takes in the country to be searched and 'normalizes' it so it is successful with the
+     * API call. First it sets the country to a local variable and trims off any white space
+     * before and after the string. Then the local variable is checked if it contains any other
+     * spaces and if it does then they are replaced with '?' so the country can be searched
+     * successfully using the API. The local variable is returned.
      *
-     * @param country
-     * @return
+     * @param country - the country to be searched defined in MainActivity
+     * @return string - the country to be searched is 'normalized' to work successfully with the API
      */
     public String normalizeCountry(String country){
         String string = country.trim();
 
-        if (country.contains(" ")) {
+        if (string.contains(" ")) {
             string = string.replace(" ","?");
         }
         return string;
