@@ -117,7 +117,7 @@ public class ResultActivity extends AppCompatActivity {
         tvName.setText(" " + countryToGet);
 
         if (flag) {
-            srcUrl = countryData.getUrl();
+            srcUrl = countryData.getFlagUrl();
             webViewFlag.loadUrl(srcUrl);
             webViewFlag.setInitialScale(1);
             webViewFlag.getSettings().setLoadWithOverviewMode(true);
