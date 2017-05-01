@@ -3,7 +3,11 @@ package com.example.heather.countriesfinalproject;
 import java.util.ArrayList;
 
 /**
- * Created by hcarlson1 on 4/26/2017.
+ *
+ *
+ * @author Tom Gibbons, Heather Carlson
+ * @version 1.0
+ * @since 4/29/2017
  */
 
 public class Country {
